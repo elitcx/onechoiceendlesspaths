@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="32" fill="#020718"/>
+
+  <!-- Outer glow ring -->
+  <circle cx="32" cy="32" r="30" stroke="#6366f1" stroke-width="1" stroke-opacity="0.35"/>
+
+  <!-- Single path coming up from bottom -->
+  <path d="M32 52 L32 32" stroke="#6366f1" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Fork node dot -->
+  <circle cx="32" cy="30" r="3.5" fill="#6366f1"/>
+  <circle cx="32" cy="30" r="6" fill="#6366f1" fill-opacity="0.2"/>
+
+  <!-- Left branch -->
+  <path d="M32 30 Q22 24 18 14" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <!-- Left end dot -->
+  <circle cx="18" cy="13" r="2.5" fill="#ef4444"/>
+  <circle cx="18" cy="13" r="5" fill="#ef4444" fill-opacity="0.2"/>
+
+  <!-- Right branch -->
+  <path d="M32 30 Q42 24 46 14" stroke="#a5b4fc" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <!-- Right end dot -->
+  <circle cx="46" cy="13" r="2.5" fill="#a5b4fc"/>
+  <circle cx="46" cy="13" r="5" fill="#a5b4fc" fill-opacity="0.2"/>
+</svg>
