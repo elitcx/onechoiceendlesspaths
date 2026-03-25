@@ -4,7 +4,7 @@ SMA REGINA PACIS SURAKARTA
 ## Anggota Tim
 - Ketua: Kenneth Jehezkiel Marvel Wijaya
 - Anggota 1: Keyla Faithhill Widyanto
-- Anggota 2: Aloysius Sandy Hermawan
+- Anggota 2: Aloysius Sandy Hermawan Oentoro
 ## Deskripsi Karya
 Website ini dibuat dengan latar belakang meningkatnya berbagai permasalahan sosial di kehidupan sehari-hari, seperti bullying, kurangnya kepedulian terhadap sesama, serta rendahnya kesadaran dalam mengambil keputusan yang tepat. Banyak orang, terutama remaja, sering menghadapi situasi sulit namun tidak memahami dampak dari pilihan yang mereka ambil.
 
