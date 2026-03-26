@@ -113,8 +113,8 @@ const SCENES = [
     heading: '✦ Pressure ✦',
     narrative: 'The other passenger looks unsure. What will you do?',
     image: '/assets/scene13.webp',
-    left:  { label: 'Ask them nicely to help',     symbol: '🤝', color: '#ffffff', tint: 'rgba(20,20,100,0.42)', result: 'You invite the other passenger to help together.', detail: '→ Go to NEUTRAL ENDING 2' },
-    right: { label: 'Force them to give their seat', symbol: '✗',color: '#ffffff', tint: 'rgba(20,20,100,0.42)',result: 'You ignore the situation completely.', detail: '→ Go to Scene 14: Argument' },
+    left:  { label: 'Ask him nicely to help',     symbol: '🤝', color: '#ffffff', tint: 'rgba(20,20,100,0.42)', result: 'You invite the other passenger to help together.', detail: '→ Go to NEUTRAL ENDING 2' },
+    right: { label: 'Force him to give their seat', symbol: '✗',color: '#ffffff', tint: 'rgba(20,20,100,0.42)',result: 'You ignore the situation completely.', detail: '→ Go to Scene 14: Argument' },
   },
   {
     id: 'scene_14',
@@ -136,7 +136,7 @@ const SCENES = [
     endingText:
 `She gives you a keepsake that means a lot.
 
-She makes it home safe. She smiles and thanks you. People who saw what happened start encouraging others around them. Small kindness can change lives.
+She makes it home safe. She smiles and thanks you. People who saw what happened start encouraging others around them. Small kindness can change lives.  
 
 This journey ends here, but the ripple continues. You chose to do the right thing.
 
