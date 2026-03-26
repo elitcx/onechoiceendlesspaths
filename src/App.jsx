@@ -123,13 +123,25 @@ const NAV_LINKS = [
   { label: 'Game',    page: 2, sectionId: null       },
 ];
 
-function NavigationBar({ onNavigate, currentPage }) {
-  const [activeIndex, setActiveIndex] = useState(0);
+function NavigationBar({ onNavigate, currentPage, justExitedGame }) {
   const [underline, setUnderline]     = useState({ left: 0, width: 0 });
   const linkRefs = useRef([]);
   const isAutoScrolling = useRef(false);
   const manualIndex = useRef(null);
-  
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    if (justExitedGame && currentPage === 1) {
+      manualIndex.current = 0;
+      setActiveIndex(0);
+
+      // release after scroll settles
+      setTimeout(() => {
+        manualIndex.current = null;
+      }, 500);
+    }
+  }, [justExitedGame, currentPage]);
+
   function updateUnderline() {
     const idx = currentPage === 2
       ? NAV_LINKS.findIndex(l => l.page === 2)
@@ -1043,6 +1055,7 @@ function App() {
   const [page,      setPage]      = useState(1);
   const [gameState, setGameState] = useState('landing');
   const [scrollTarget, setScrollTarget] = useState(null);
+  const [justExitedGame, setJustExitedGame] = useState(false);
 
   const [unlockedEndings, setUnlockedEndings] = useState(() => {
     try { return JSON.parse(localStorage.getItem('unlockedEndings')) || {}; }
@@ -1088,6 +1101,12 @@ function App() {
     }
   }, [page, scrollTarget]);
 
+  useEffect(() => {
+  if (page === 1 && justExitedGame) {
+    setJustExitedGame(false);
+  }
+}, [page, justExitedGame]);
+
   const endingsWithState = ENDINGS_META.map(e => ({ ...e, unlocked: Boolean(unlockedEndings[e.id]) }));
 
   // Landing + prologue render outside the main layout (no navbar)
@@ -1123,9 +1142,21 @@ function App() {
     >
       <ParticleField />
       {page === 2 && gameState === 'playing' ? (
-        <ExitButton onExit={() => setPage(1)} />
+        <ExitButton
+          onExit={() => {
+            const container = document.getElementById('app-root');
+            if (container) container.scrollTop = 0;
+
+            setJustExitedGame(true); // mark special case
+            goToPage(1, 'home');
+          }}
+        />
       ) : (
-        <NavigationBar onNavigate={goToPage} currentPage={page} />
+        <NavigationBar 
+          onNavigate={goToPage} 
+          currentPage={page}
+          justExitedGame={justExitedGame}
+        />
       )}
       
 
